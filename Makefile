@@ -13,7 +13,7 @@
 #
 # The Current Maintainer of this work is Tom M. Ragonneau.
 LC := latexmk
-LCFLAGS := -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape
+LCFLAGS := -shell-escape -file-line-error -halt-on-error -interaction=nonstopmode
 
 latex: main
 
