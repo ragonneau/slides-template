@@ -1,0 +1,5 @@
+# .github/CODEOWNERS
+# Individuals or teams that are responsible for code in a repository
+# See https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners for details
+
+*  @ragonneau
