@@ -18,4 +18,7 @@ $pdf_mode = 5;
 $postscript_mode = 0;
 $dvi_mode = 0;
 
-$clean_ext = "nav snm";
+# Run biber to regenerate the bbl files
+$bibtex_use = 2;
+
+$clean_ext = "nav run.xml snm synctex.gz";

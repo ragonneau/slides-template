@@ -14,6 +14,10 @@
 % The Current Maintainer of this work is Tom M. Ragonneau.
 \documentclass{ragonneau-beamer}
 
+% Resources for the bibliography
+\addbibresource{example.bib}
+
+% Metadata
 \title{Title of the course}
 \subtitle{Subtitle of the course}
 \date{\today}
@@ -32,13 +36,10 @@
     \tableofcontents[hideallsubsections]
 \end{frame}
 
-\section{Introduction}
+\section{Blocks}
 
-\begin{frame}{Introduction}
-    This is an \alert{alerted text} and
-    \begin{equation*}
-        \int_0^1 f(x) \, \du x = \bigo(1).
-    \end{equation*}
+\begin{frame}{Different blocks}
+    This template provides \alert{three} different blocks.
 
     \begin{block}{A block}
         This is a block.
@@ -53,6 +54,21 @@
     \end{exampleblock}
 \end{frame}
 
+\section{Maths}
+
+\begin{frame}{Some maths}
+    Maths are used as usual in \LaTeX.
+    For example,
+    \begin{equation*}
+        \sum_{k = 1}^{\infty} \frac{1}{k^2} = \frac{\pi^2}{6}.
+    \end{equation*}
+\end{frame}
+
 \appendix
+
+\begin{frame}[t,allowframebreaks]{References}
+    \nocite{knut86}
+    \printbibliography[heading=none]
+\end{frame}
 
 \end{document}

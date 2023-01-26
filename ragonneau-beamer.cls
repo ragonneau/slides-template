@@ -19,6 +19,10 @@
 \ProcessOptions\relax
 \LoadClass[10pt]{beamer}
 
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english]{babel}
+\RequirePackage{csquotes}
+
 % Manage frame numbering in appendices
 \RequirePackage{appendixnumberbeamer}
 
@@ -56,6 +60,22 @@
 
 % Font for standout frames
 \setbeamerfont{standout}{size=\normalsize}
+
+% Bibliography
+\RequirePackage[
+    style=ext-authoryear-comp,
+    articlein=false,
+    sorting=nyt,
+    sortcites=false,
+    maxcitenames=3,
+]{biblatex}
+\DefineBibliographyStrings{english}{
+    bathesis={B\adddot A\adddotspace thesis},
+    mathesis={M\adddot A\adddotspace thesis},
+    phdthesis={Ph\adddot D\adddotspace thesis},
+}
+\setbeamertemplate{bibliography item}[triangle]
+\DeclareNameAlias{author}{family-given}
 
 % Support for license
 \RequirePackage[
