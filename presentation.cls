@@ -1,4 +1,4 @@
-%% ragonneau-beamer.tex
+%% presentation.tex
 %% Copyright 2023 Tom M. Ragonneau
 %
 % This work may be distributed and/or modified under the
@@ -13,7 +13,7 @@
 % 
 % The Current Maintainer of this work is Tom M. Ragonneau.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ragonneau-beamer}[2023/01/26 Beamer document class of Tom M. Ragonneau]
+\ProvidesClass{presentation}[2023/01/26 Beamer document class of Tom M. Ragonneau]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{beamer}}
 \ProcessOptions\relax
@@ -77,6 +77,9 @@
 \setbeamertemplate{bibliography item}[triangle]
 \DeclareNameAlias{author}{family-given}
 
+% Path relative to the main .tex file
+\graphicspath{{./images/}}
+
 % Support for license
 \RequirePackage[
     type={CC},
@@ -86,7 +89,7 @@
 \apptocmd{\doclicenseLongName}{license}{}{}
 
 % Support for mathematics
-\RequirePackage{ragonneau-maths}
+\RequirePackage{maths}
 
 % The following sets
 %  - \giturl to the complete url of the git repository
