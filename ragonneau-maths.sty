@@ -1,0 +1,68 @@
+%% ragonneau-maths.tex
+%% Copyright 2023 Tom M. Ragonneau
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Tom M. Ragonneau.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ragonneau-maths}[2023/01/26 Maths support package of Tom M. Ragonneau]
+
+\RequirePackage{bm}
+\RequirePackage{empheq}
+\RequirePackage{esint}
+\RequirePackage[bb=dsfontserif]{mathalpha}
+\RequirePackage{mathtools}
+
+% Upright letters
+\newcommand{\eu}{\mathrm{e}}
+\newcommand{\iu}{\mathrm{i}}
+\newcommand{\ju}{\mathrm{j}}
+\newcommand{\du}{\mathrm{d}}
+
+% Sets
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% Transpose
+\newcommand{\T}{\mathsf{T}}
+
+% Operators
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\bigo}{\mathcal{O}}
+\DeclareMathOperator{\card}{card}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\cond}{\kappa}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\lito}{o}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\vspan}{span}
+
+% Other operators
+\newcommand{\abs}[2][]{#1\lvert#2#1\rvert}
+\newcommand{\ceil}[2][]{#1\lceil#2#1\rceil}
+\newcommand{\floor}[2][]{#1\lfloor#2#1\rfloor}
+\newcommand{\norm}[2][]{#1\lVert#2#1\rVert}
+\newcommand{\set}[2][]{#1\{#2#1\}}
+\newcommand{\inner}[2][]{#1\langle#2#1\rangle}
+
+% Equality by definition
+\newcommand{\eqdef}{\mathrel{\stackrel{\mathsf{def}}{=}}}
+
+% Fine-tuning spacing in formulas
+% Make @ behave as per catcode 13 (active). The TeXbook, p. 155.
+\mathcode`@="8000{\catcode`\@=\active\gdef@{\mkern1mu}}

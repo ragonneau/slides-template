@@ -22,7 +22,7 @@
     Department of Applied Mathematics\\ 
     The Hong Kong Polytechnic University
 }
-% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+\titlegraphic{}
 
 \begin{document}
 
@@ -34,11 +34,23 @@
 
 \section{Introduction}
 
-\begin{frame}{Introduction} 
+\begin{frame}{Introduction}
     This is an \alert{alerted text} and
-    \begin{equation}
-        x = \int_0^1 f(y) \, \mathrm{d}y
-    \end{equation}
+    \begin{equation*}
+        \int_0^1 f(x) \, \du x = \bigo(1).
+    \end{equation*}
+
+    \begin{block}{A block}
+        This is a block.
+    \end{block}
+
+    \begin{alertblock}{An alertblock}
+        This is an alertblock.
+    \end{alertblock}
+
+    \begin{exampleblock}{An exampleblock}
+        This is an exampleblock.
+    \end{exampleblock}
 \end{frame}
 
 \appendix

@@ -41,9 +41,12 @@
 \pdfstringdefDisableCommands{\def\translate#1{#1}}
 
 % Change theme colors
-\definecolor{PolyURed}{RGB}{160,25,55}
-\definecolor{PolyUGrey}{RGB}{88,89,91}
-% \setbeamercolor{alerted text}{fg=PolyURed,bg=PolyUGrey}
+\definecolor{VeniceBlue}{HTML}{2F5675}
+\definecolor{RobRoy}{HTML}{DAAD49}
+\definecolor{Ziggurat}{HTML}{84B2B0}
+\setbeamercolor{normal text}{fg=VeniceBlue!70!black,bg=black!2}
+\setbeamercolor{alerted text}{fg=RobRoy!95!black}
+\setbeamercolor{example text}{fg=Ziggurat!75!black}
 
 % Change theme templates
 \setbeamertemplate{section in toc}[sections numbered]
@@ -61,6 +64,9 @@
     version={4.0},
 ]{doclicense}
 \apptocmd{\doclicenseLongName}{license}{}{}
+
+% Support for mathematics
+\RequirePackage{ragonneau-maths}
 
 % The following sets
 %  - \giturl to the complete url of the git repository
