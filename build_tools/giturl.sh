@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-git ls-remote --get-url | sed "s/\.git$/\//"
+if [[ -z "$GITHUB_SERVER_URL" || -z "$GITHUB_REPOSITORY" ]]; then
+    git ls-remote --get-url | sed "s/\.git$/\//"
+else
+    echo "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/"
+fi
