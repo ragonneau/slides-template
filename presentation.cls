@@ -10,7 +10,7 @@
 % version 2005/12/01 or later.
 %
 % This work has the LPPL maintenance status `maintained'.
-% 
+%
 % The Current Maintainer of this work is Tom M. Ragonneau.
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{presentation}[2023/01/26 Beamer document class of Tom M. Ragonneau]
@@ -85,6 +85,7 @@
     type={CC},
     modifier={by-sa},
     version={4.0},
+    hyperxmp=false,
 ]{doclicense}
 \apptocmd{\doclicenseLongName}{license}{}{}
 
@@ -113,19 +114,19 @@
     \end{frame}
 
     \begin{frame}[standout]
-    
+
         This work is licensed under a \doclicenseLongNameRef.
         \begin{center}
             \doclicenseImage[imagewidth=0.3\textwidth]
         \end{center}
-    
+
         \bigskip
-    
+
         The source code of this presentation is available at
         \begin{center}
             \normalfont\href{\giturl}{\texttt{\giturlshort}}.
         \end{center}
-    
+
         It is based on the metropolis Beamer theme, available at
         \begin{center}
             \normalfont\href{https://github.com/matze/mtheme/}{\texttt{github.com/matze/mtheme}}.
