@@ -148,7 +148,7 @@
 
         This work is licensed under a \doclicenseLongNameRef.
         \begin{center}
-            \doclicenseImage[imagewidth=0.3\textwidth]
+            \upshape\doclicenseImage[imagewidth=0.3\textwidth]
         \end{center}
 
         \bigskip
