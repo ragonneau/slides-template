@@ -61,6 +61,41 @@
 % Font for standout frames
 \setbeamerfont{standout}{size=\normalsize}
 
+% Customize blocks, alert blocks, and example blocks
+\renewcommand{\metropolis@block}[1]{
+    \par\vskip\medskipamount%
+    \setlength{\parskip}{0pt}
+    \ifdefempty{\insertblocktitle}{}{
+        \ifbeamercolorempty[bg]{block title#1}{%
+            \begin{beamercolorbox}[rightskip=0pt plus 4em]{block title#1}}{%
+        \ifbeamercolorempty[bg]{block title}{%
+            \begin{beamercolorbox}[rightskip=0pt plus 4em]{block title#1}%
+        }{%
+            \begin{beamercolorbox}[
+                sep=\dimexpr\metropolis@blocksep-\metropolis@blockadjust\relax,
+                leftskip=\metropolis@blockadjust,
+                rightskip=\dimexpr\metropolis@blockadjust plus 4em\relax,
+            ]{block title#1}%
+        }}%
+            \usebeamerfont*{block title#1}%
+            \metropolis@strut%
+            \insertblocktitle%
+            \metropolis@strut%
+        \end{beamercolorbox}%
+        \nointerlineskip%
+    }%
+    \ifbeamercolorempty[bg]{block body#1}{%
+        \begin{beamercolorbox}[vmode]{block body#1}}{
+    \ifbeamercolorempty[bg]{block body}{%
+        \begin{beamercolorbox}[vmode]{block body#1}%
+    }{%
+        \begin{beamercolorbox}[sep=\metropolis@blocksep, vmode]{block body#1}%
+        \vspace{-\metropolis@parskip}
+    }}%
+        \usebeamerfont{block body#1}%
+        \setlength{\parskip}{\metropolis@parskip}%
+}
+
 % Bibliography
 \RequirePackage[
     style=ext-authoryear-comp,
