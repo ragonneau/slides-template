@@ -47,10 +47,10 @@
 % Change theme colors
 \definecolor{VeniceBlue}{HTML}{2F5675}
 \definecolor{RobRoy}{HTML}{DAAD49}
-\definecolor{Ziggurat}{HTML}{84B2B0}
+\definecolor{FernGreen}{HTML}{4F7942}
 \setbeamercolor{normal text}{fg=VeniceBlue!70!black,bg=black!2}
 \setbeamercolor{alerted text}{fg=RobRoy!95!black}
-\setbeamercolor{example text}{fg=Ziggurat!75!black}
+\setbeamercolor{example text}{fg=FernGreen!95!black}
 
 % Change theme templates
 \setbeamertemplate{section in toc}[sections numbered]
@@ -143,11 +143,7 @@
 \expandafter\setgiturlshort\giturl\relax
 
 % Add a license frame after the title page
-\renewcommand{\maketitle}{
-    \begin{frame}[plain,noframenumbering]
-        \titlepage
-    \end{frame}
-
+\AtEndDocument{
     \begin{frame}[standout]
 
         This work is licensed under a \doclicenseLongNameRef.
