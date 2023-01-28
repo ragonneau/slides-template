@@ -22,6 +22,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage[english]{babel}
 \RequirePackage{csquotes}
+\RequirePackage{ifdraft}
 
 % Manage frame numbering in appendices
 \RequirePackage{appendixnumberbeamer}
@@ -126,6 +127,16 @@
 
 % Support for mathematics
 \RequirePackage{maths}
+
+% QR codes
+\ifdraft{\PassOptionsToPackage{draft}{qrcode}}{}
+\usepackage[nolinks]{qrcode}
+\qrset{level=Q,version=3}  % Up to 47 alphanumeric characters
+
+% Make QR codes clickable (the document is compiled with XeLaTeX)
+\setlength{\XeTeXLinkMargin}{1pt}
+\let\oldqrcode\qrcode\relax
+\def\qrcode#1{\href{#1}{\XeTeXLinkBox{\oldqrcode{#1}}}}
 
 % The following sets
 %  - \giturl to the complete url of the git repository
