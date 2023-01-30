@@ -15,9 +15,16 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{presentation}[2023/01/26 Beamer document class of Tom M. Ragonneau]
 
+\RequirePackage{ifthen}
+\newboolean{nogiturl}
+\setboolean{nogiturl}{false}
+\DeclareOption{nogiturl}{\setboolean{nogiturl}{true}}
+\newboolean{nolicense}
+\setboolean{nolicense}{false}
+\DeclareOption{nolicense}{\setboolean{nolicense}{true}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{beamer}}
 \ProcessOptions\relax
-\LoadClass[10pt]{beamer}
+\LoadClass[10pt,xcolor=dvipsnames]{beamer}
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage[english]{babel}
@@ -112,6 +119,7 @@
 }
 \setbeamertemplate{bibliography item}[triangle]
 \DeclareNameAlias{author}{family-given}
+\setlength\bibitemsep{\itemsep}
 
 % Path relative to the main .tex file
 \graphicspath{{./images/}}
@@ -153,25 +161,29 @@
 \def\setgiturlshort#1://#2/\relax{\def\giturlshort{#2}}
 \expandafter\setgiturlshort\giturl\relax
 
-% Add a license frame after the title page
-\AtEndDocument{
-    \begin{frame}[standout]
+% Add a license frame at the end of the presentation
+\ifthenelse{\boolean{nolicense}}{}{
+    \AtEndDocument{
+        \begin{frame}[standout]
 
-        This work is licensed under a \doclicenseLongNameRef.
-        \begin{center}
-            \upshape\doclicenseImage[imagewidth=0.3\textwidth]
-        \end{center}
+            This work is licensed under a \doclicenseLongNameRef.
+            \begin{center}
+                \upshape\doclicenseImage[imagewidth=0.3\textwidth]
+            \end{center}
 
-        \bigskip
+            \bigskip
 
-        The source code of this presentation is available at
-        \begin{center}
-            \normalfont\href{\giturl}{\texttt{\giturlshort}}.
-        \end{center}
+            \ifthenelse{\boolean{nogiturl}}{}{
+                The source code of this presentation is available at
+                \begin{center}
+                    \normalfont\href{\giturl}{\texttt{\giturlshort}}.
+                \end{center}
+            }
 
-        It is based on the metropolis Beamer theme, available at
-        \begin{center}
-            \normalfont\href{https://github.com/matze/mtheme/}{\texttt{github.com/matze/mtheme}}.
-        \end{center}
-    \end{frame}
+            It is based on the metropolis Beamer theme, available at
+            \begin{center}
+                \normalfont\href{https://github.com/matze/mtheme/}{\texttt{github.com/matze/mtheme}}.
+            \end{center}
+        \end{frame}
+    }
 }
