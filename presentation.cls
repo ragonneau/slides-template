@@ -46,6 +46,12 @@
     block=fill,
 }
 
+% Reduce margins
+\setbeamersize{
+    text margin left=0.75\beamer@leftmargin,
+    text margin right=0.75\beamer@rightmargin,
+}
+
 % Patch `Overfull \vbox (... too high)' in title page
 \RequirePackage{tikz}
 \usetikzlibrary{positioning}
