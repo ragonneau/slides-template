@@ -46,8 +46,15 @@
     block=fill,
 }
 
-% Patch `Overfull \vbox (13.79993pt too high)' in title page
+% Patch `Overfull \vbox (... too high)' in title page
+\RequirePackage{tikz}
+\usetikzlibrary{positioning}
 \def\titlepage{\usebeamertemplate{title page}}
+\setbeamertemplate{title graphic}{
+    \begin{tikzpicture}[overlay,remember picture]
+        \node[below left=2em and \beamer@rightmargin of current page.north east] {\inserttitlegraphic};
+    \end{tikzpicture}
+}
 
 % Patch `Token not allowed in a PDF string (Unicode)' in appendix
 \pdfstringdefDisableCommands{\def\translate#1{#1}}
