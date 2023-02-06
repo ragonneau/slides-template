@@ -46,6 +46,22 @@
     block=fill,
 }
 
+% Fonts
+\setsansfont{FiraSans}[
+    Path=fonts/fira-sans/,
+    Extension=.otf,
+    UprightFont=*-Light,
+    BoldFont=*-Regular,
+    ItalicFont=*-LightItalic,
+    BoldItalicFont=*-Italic,
+]
+\setmonofont{FiraMono}[
+    Path=fonts/fira-mono/,
+    Extension=.otf,
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+]
+
 % Reduce margins
 \setbeamersize{
     text margin left=0.75\beamer@leftmargin,
